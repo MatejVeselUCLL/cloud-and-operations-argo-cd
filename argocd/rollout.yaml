@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: cloud-and-operations-back-end
+spec:
+  replicas: 3
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 40
+        - pause: {duration: 10}
+        - setWeight: 60
+        - pause: {duration: 10}
+        - setWeight: 80
+        - pause: {duration: 10}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: cloud-and-operations-back-end
+  template:
+    metadata:
+      labels:
+        app: cloud-and-operations-back-end
+    spec:
+      containers:
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:0.0.6-snapshot
+          command: [ "java" ]
+          args: [ "-jar", "demo-0.0.6-SNAPSHOT.jar" ]
+          name: cloud-and-operations-back-end
+          ports:
+            - containerPort: 8080
+#          resources:
+#            requests:
+#              memory: 32Mi
+#              cpu: 5m
