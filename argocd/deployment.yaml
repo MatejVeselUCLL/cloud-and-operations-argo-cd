@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-and-operations-back-end
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: cloud-and-operations-back-end
+  template:
+    metadata:
+      labels:
+        app: cloud-and-operations-back-end
+    spec:
+      containers:
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:0.0.4-snapshot
+          name: cloud-and-operations-back-end
+          ports:
+            - containerPort: 8080
