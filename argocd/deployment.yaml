@@ -14,7 +14,7 @@ spec:
         app: cloud-and-operations-back-end
     spec:
       containers:
-        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:0.0.4-snapshot
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:0.0.5-snapshot
           name: cloud-and-operations-back-end
           ports:
             - containerPort: 8080
