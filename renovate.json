@@ -14,5 +14,5 @@
       "versioning": "semver"
     }
   ],
-  "schedule": ["0 0 * * *"]
+  "schedule": ["* 0 * * *"]
 }
