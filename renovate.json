@@ -5,5 +5,14 @@
   ],
   "kubernetes": {
     "managerFilePatterns": ["/\\.yaml$/"]
-  }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["^ghcr.io\\/matejveselucll\\/demo-cloud-and-operations-back-end-(dev|main|qa)$"],
+      "versionCompatibility": "^(?<version>.*)$",
+      "versioning": "semver"
+    }
+  ],
+  "schedule": ["0 0 * * *"]
 }

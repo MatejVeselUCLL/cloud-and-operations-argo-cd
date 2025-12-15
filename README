@@ -1,8 +1,0 @@
-//  "packageRules": [
-//    {
-//      "matchDatasources": ["docker"],
-//      "matchPackageNames": ["ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev"],
-//      "versionCompatibility": "^(?<version>.*)$",
-//      "versioning": "semver"
-//    }
-//  ]
