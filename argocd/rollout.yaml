@@ -25,9 +25,9 @@ spec:
         app: cloud-and-operations-back-end
     spec:
       containers:
-        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.1
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.2
           command: [ "java" ]
-          args: [ "-jar", "demo-*.jar" ]
+          args: [ "-jar", "demo-$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout).jar" ]
           name: cloud-and-operations-back-end
           ports:
             - containerPort: 8080
