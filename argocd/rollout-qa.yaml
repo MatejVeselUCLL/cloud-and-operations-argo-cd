@@ -25,7 +25,7 @@ spec:
         app: cloud-and-operations-back-end-qa
     spec:
       containers:
-        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-qa:v0.1.9
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-qa:v0.2.0
           command: [ "java" ]
           args: [ "-jar", "demo-qa.jar" ]
           name: cloud-and-operations-back-end-qa
