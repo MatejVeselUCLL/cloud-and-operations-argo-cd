@@ -25,7 +25,7 @@ spec:
         app: cloud-and-operations-back-end-dev
     spec:
       containers:
-        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.8
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.9
           command: [ "java" ]
           args: [ "-jar", "demo-dev.jar" ]
           name: cloud-and-operations-back-end-dev
