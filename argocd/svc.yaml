@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cloud-and-operations-back-end
+  name: cloud-and-operations-back-end-dev
 spec:
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: cloud-and-operations-back-end
+    app: cloud-and-operations-back-end-dev

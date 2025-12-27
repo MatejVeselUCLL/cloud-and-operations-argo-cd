@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: cloud-and-operations-back-end
+  name: cloud-and-operations-back-end-dev
 spec:
   replicas: 3
   strategy:
@@ -18,17 +18,17 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: cloud-and-operations-back-end
+      app: cloud-and-operations-back-end-dev
   template:
     metadata:
       labels:
-        app: cloud-and-operations-back-end
+        app: cloud-and-operations-back-end-dev
     spec:
       containers:
-        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.4
+        - image: ghcr.io/matejveselucll/demo-cloud-and-operations-back-end-dev:v0.1.6
           command: [ "java" ]
           args: [ "-jar", "demo-dev.jar" ]
-          name: cloud-and-operations-back-end
+          name: cloud-and-operations-back-end-dev
           ports:
             - containerPort: 8080
 #          resources:
