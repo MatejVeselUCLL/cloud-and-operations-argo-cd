@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: cloud-and-operations-back-end-dev
 spec:
-  replicas: 3
+  replicas: 1
   strategy:
     canary:
       steps:
